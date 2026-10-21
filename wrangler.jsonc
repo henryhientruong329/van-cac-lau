@@ -1,0 +1,9 @@
+{
+  "name": "van-cac-lau",
+  "compatibility_date": "2026-05-15",
+  "workers_dev": true,
+  "assets": {
+    "directory": "./site",
+    "not_found_handling": "single-page-application"
+  }
+}
