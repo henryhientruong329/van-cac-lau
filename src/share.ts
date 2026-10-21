@@ -1,0 +1,3 @@
+export const validBookId=(id:string)=>/^[a-f0-9]{8}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{4}-[a-f0-9]{12}$/i.test(id);
+export function bookLink(id:string,base:string):string{if(!validBookId(id))throw Error('Truyện chưa có đường dẫn công khai.');const url=new URL(base);if(!['https:','http:'].includes(url.protocol))throw Error('Đường dẫn website không hợp lệ.');url.username='';url.password='';url.search='';url.hash='';url.searchParams.set('book',id);return url.toString()}
+export function emailLink(title:string,url:string){return 'mailto:?subject='+encodeURIComponent('Mời bạn đọc: '+title)+'&body='+encodeURIComponent('Mình muốn chia sẻ với bạn cuốn truyện “'+title+'” trên Văn Các Lầu.\n\n'+url+'\n\nChúc bạn có những giờ đọc thú vị!')}
